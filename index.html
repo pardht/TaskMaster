@@ -1,24 +1,418 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Master!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="image/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="navbar.js" defer></script> <!-- Load the script -->
+    <style src="">
+        html {
+            padding: 0;
+            margin: 0;
+            overflow: -moz-scrollbars-none;
+            overflow-y: scroll;
+            /* scroll-behavior: smooth; */
+            background: #fbfbe8;
+
+        }
+
+        html::-webkit-scrollbar {
+            display: none;
+
+        }
+
+        .poppins {
+            font-family: "Poppins", sans-serif;
+        }
+
+        .dancing {
+            font-family: "Dancing Script", cursive;
+        }
+
+        .hover-text {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-container:hover .hover-text {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
+
 <body>
-    <header>
-        <div>Navbar</div>
-    </header>
-    <main>
-        <div>
-            Hero
+    <div class="flex justify-center">
+        <header
+            class="md:absolute w-full max-w-[1200px]  h-[50px] md:h-[70px] flex justify-between items-center p-3 md:px-10">
+            <!-- <navbar-w></navbar-w> -->
+            <div>
+                <p class="font-black text-xl md:text-2xl text-[#4745D0]">TaskMaster.</p>
+            </div>
+            <div>
+                <div>
+                    <i class="md:hidden fa-solid fa-bars fa-xl"></i>
+                </div>
+                <ul class="hidden md:flex font-medium gap-10 text-zinc-600">
+                    <li>Home</li>
+                    <li>About Us</li>
+                    <li>Services</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </header>
+    </div>
+
+    <div class="w-full max-w-[1200px] h-auto mx-auto p-3 md:px-10 poppins space-y-[10px]">
+        <main class="pb-20">
+            <!-- hero section  -->
+            <div class="md:h-screen space-y-[30px] md:space-y-0 md:flex  md:py-10 md:space-x-12">
+                <div class="flex-1 flex items-center">
+                    <img src="assets/main.png" alt="" class=" brightness-110  ">
+                </div>
+                <div class="space-y-[20px] md:space-y-[30px] flex-1 flex flex-col justify-center">
+                    <p class="font-semibold text-2xl md:text-4xl"><span class="font-bold">Solusi Cepat</span> dan <span
+                            class="font-bold">Berkualitas</span> untuk <span class="font-bold">Tugas IT</span> Anda</p>
+                    <p class="text-zinc-600 md:text-lg leading-8">Jasa Joki Tugas khusus IT kami hadir sebagai solusi
+                        bagi mahasiswa yang
+                        memerlukan bantuan dalam
+                        menyelesaikan tugas-tugas IT. Kami menerima permintaan joki tugas dari berbagai kalangan, baik
+                        dari
+                        dalam kampus maupun luar kampus.</p>
+                    <div>
+                        <button class=" bg-[#4745D0] text-sm text-white font-semibold px-6 py-4 rounded-[15px] border-2 border-[#4745D0]
+                    hover:bg-transparent hover:text-[#4745D0] duration-300 group flex
+                    ">
+                            Konsultasi Sekarang<p class="pl-2 group-hover:translate-x-1  duration-200"> ></p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- hero section ends  -->
+            <!-- about us section  -->
+            <!-- >serba bisa  -->
+            <div class="py-10 space-y-5 md:flex md:gap-6 md:space-y-0">
+                <div
+                    class="flex-1 rounded-[20px] shadow-inner shadow-black/30  border-2 border-[#4745D0]  p-8 space-y-5">
+                    <div class="flex items-center gap-6">
+                        <img src="assets/book-solid.svg" alt="" class="w-[40px] md:w-[50px]">
+                        <div>
+                            <p class="text-sm">Serba Bisa</p>
+                            <p class="font-semibold text-xl md:text-2xl">Tugas IT Apapun Bisa!</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="font-medium leading-7 md:font-normal md:text-lg md:pt-3 md:pb-8">TaskMaster telah
+                            berhasil menyelesaikan hampir 90% dari berbagai jenis
+                            tugas IT yang pernah
+                            diajukan kepada tim kami dengan hasil yang sangat memuaskan dan berkualitas tinggi.</p>
+                    </div>
+                </div>
+                <!-- >privasi keamanan  -->
+                <div
+                    class="flex-1 rounded-[20px] shadow-inner shadow-black/30  border-2 border-[#4745D0]  p-8 space-y-5">
+                    <div class="flex items-center gap-6">
+                        <img src="assets/lock-solid.svg" alt="" class="w-[40px] md:w-[50px]">
+                        <div>
+                            <p class="text-sm">Privasi dan Keamanan</p>
+                            <p class="font-semibold text-xl md:text-2xl">Privasi Terjaga 100%</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="font-medium leading-7 md:font-normal md:text-lg md:pt-3 md:pb-8">TaskMaster
+                            berkomitmen untuk selalu menjaga dan meningkatkan keamanan
+                            serta privasi pelanggan dalam setiap aspek secara jelas dan tegas.</p>
+                    </div>
+                </div>
+                <!-- >jam kerja  -->
+                <div
+                    class="flex-1 rounded-[20px] shadow-inner shadow-black/30  border-2 border-[#4745D0]  p-8 space-y-5">
+                    <div class="flex items-center gap-6">
+                        <img src="assets/ghost-solid.svg" alt="" class="w-[40px] md:w-[50px]">
+                        <div>
+                            <p class="text-sm">Jam Kerja</p>
+                            <p class="font-semibold text-xl md:text-2xl">Layanan cepat 24 Jam</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="font-medium leading-7 md:font-normal md:text-lg md:pt-3 md:pb-8">TaskMaster akan
+                            membantu mengatasi permasalahan tugasmu serta memberikan
+                            konsultasi secara cepat dan tepat selama 24 jam melalui
+                            <button class="font-semibold text-[#4745D0]">WhatsApp</button>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- >kenapa harus kami ? -->
+            <div class="space-y-8 md:flex py-12">
+                <div class="flex-1">
+                    <img src="assets/about.png" alt="" class="brightness-110">
+                </div>
+                <div class="flex-1 space-y-5">
+                    <p class="font-semibold text-xl md:text-2xl">“Kenapa Harus Jasa Tugas di Kami?”</p>
+                    <p class="text-zinc-600  md:text-lg leading-8">TaskMaster adalah penyedia layanan unggulan dalam
+                        penyelesaian tugas IT di Indonesia. Kami telah
+                        sukses menangani beragam tugas dari perguruan tinggi. Dengan dedikasi dan komitmen kami,
+                        TaskMaster telah menjadi platform resmi yang menyediakan layanan untuk membantu Anda
+                        menyelesaikan tugas kuliah di bidang IT.</p>
+                </div>
+            </div>
+
+            <!-- > apa itu joki tugas?  -->
+            <div
+                class="bg-[#4745D0] rounded-b-[70px] rounded-t-[20px] shadow-md shadow-black/40 text-white p-10 space-y-5">
+                <p class="text-center font-semibold text-2xl">Apa Itu Joki Tugas?</p>
+                <p class="leading-8 pb-8 md:text-center">Joki tugas adalah individu atau tim yang menawarkan layanan
+                    untuk membantu orang lain menyelesaikan
+                    berbagai tugas mereka, baik itu tugas akademik seperti tugas sekolah dan kuliah, maupun proyek
+                    lainnya seperti laporan magang atau skripsi. Mereka memiliki keahlian dan pengalaman di bidang
+                    tertentu, sehingga dapat membantu dalam memahami, merencanakan, dan menyelesaikan tugas dengan
+                    efisien.</p>
+            </div>
+            <!-- about us section ends -->
+            <!-- service section  -->
+            <div class="w-full h-auto pt-16">
+                <p class="pb-10 font-bold text-center text-2xl md:text-3xl">Our <span
+                        class="text-[#4745D0]">Services</span></p>
+                <div class="pb-16 space-y-6 md:grid md:grid-cols-3 md:gap-10 md:space-y-0">
+                    <!-- >web development -->
+                    <div
+                        class="p-8 space-y-6 rounded-[20px] border-2 border-black/10 shadow-md shadow-black/40 hover:shadow-[#4745D0] duration-300">
+                        <div class="flex items-center gap-4">
+                            <i class="fa-solid fa-code fa-2xl"></i>
+                            <p class="font-semibold text-2xl">Web Development</p>
+                        </div>
+                        <div>
+                            <p>
+                                Membantu membangun website yang responsif dan modern, menggunakan teknologi terkini
+                                untuk
+                                menciptakan pengalaman pengguna yang optimal. Cocok untuk bisnis, personal branding,
+                                atau
+                                e-commerce.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- >UI/UX design -->
+                    <div
+                        class="p-8 space-y-6 rounded-[20px] border-2 border-black/10 shadow-md shadow-black/40 hover:shadow-[#4745D0] duration-300">
+                        <div class="flex items-center gap-4">
+                            <i class="fa-solid fa-brush fa-2xl"></i>
+                            <p class="font-semibold text-2xl">UI/UX Design</p>
+                        </div>
+                        <div>
+                            <p>
+                                Mendesain antarmuka yang estetis dan intuitif, memastikan kenyamanan pengguna saat
+                                berinteraksi
+                                dengan aplikasi atau website Anda. Fokus pada pengalaman yang sederhana dan efektif.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- >Software development -->
+                    <div
+                        class="p-8 space-y-6 rounded-[20px] border-2 border-black/10 shadow-md shadow-black/40 hover:shadow-[#4745D0] duration-300">
+                        <div class="flex items-center gap-4">
+                            <i class="fa-solid fa-server fa-2xl"></i>
+                            <p class="font-semibold text-2xl">Software Development</p>
+                        </div>
+                        <div>
+                            <p>
+                                Pengembangan perangkat lunak yang disesuaikan dengan kebutuhan spesifik Anda, mulai dari
+                                aplikasi desktop hingga solusi berbasis cloud, dengan keamanan dan efisiensi sebagai
+                                prioritas.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- >Quiz dan Ujian -->
+                    <div
+                        class="p-8 space-y-6 rounded-[20px] border-2 border-black/10 shadow-md shadow-black/40 hover:shadow-[#4745D0] duration-300">
+                        <div class="flex items-center gap-4">
+                            <i class="fa-solid fa-pen-to-square fa-2xl"></i>
+                            <p class="font-semibold text-2xl">Quiz dan Ujian</p>
+                        </div>
+                        <div>
+                            <p>
+                                Menyediakan layanan penyelesaian quiz dan ujian untuk Mahasiswa/Mahasiswi IT. Kami
+                                memastikan hasil yang akurat dan tepat waktu.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- >Data analysis -->
+                    <div
+                        class="p-8 space-y-6 rounded-[20px] border-2 border-black/10 shadow-md shadow-black/40 hover:shadow-[#4745D0] duration-300">
+                        <div class="flex items-center gap-4">
+                            <i class="fa-solid fa-chart-line fa-2xl"></i>
+                            <p class="font-semibold text-2xl">Data Analysis</p>
+                        </div>
+                        <div>
+                            <p>
+                                Menawarkan layanan analisis data untuk membantu Anda membuat keputusan yang lebih baik
+                                berdasarkan data yang ada. Kami menggunakan alat dan teknik analisis terbaru untuk
+                                memberikan wawasan yang mendalam.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- >IT Consultation -->
+                    <div
+                        class="p-8 space-y-6 rounded-[20px] border-2 border-black/10 shadow-md shadow-black/40 hover:shadow-[#4745D0] duration-300">
+                        <div class="flex items-center gap-4">
+                            <i class="fa-solid fa-comments fa-2xl"></i>
+                            <p class="font-semibold text-2xl">IT Consultation</p>
+                        </div>
+                        <div>
+                            <p>
+                                Memberikan konsultasi IT untuk membantu Anda mengatasi berbagai permasalahan teknologi.
+                                Tim
+                                kami siap memberikan solusi yang cepat dan tepat untuk kebutuhan IT Anda.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- service section ends  -->
+            <!-- contact section  -->
+            <div class="py-10">
+                <div class="space-y-3 text-center flex flex-col items-center">
+                    <p class="font-semibold text-2xl md:text-3xl">Bagaimana <span class="text-[#4745D0]">Cara
+                            Ordernya?</span></p>
+                    <p class="max-w-[580px] text-base md:text-normal text-zinc-600">Kamu masih bingung bagaimana cara
+                        order jasa joki pembuatan tugas di TaskMaster?
+                        Jangan khawatir!
+                        Kamu bisa menggunakan jasa joki pengerjaan tugas kami dengan sangat mudah dan cepat. Silahkan
+                        baca
+                        tutorial di bawah.</p>
+                </div>
+                <div class="pt-10 flex flex-col md:flex-row md:flex-wrap md:gap-[70px] justify-center gap-10">
+                    <!-- > chat kami di whatsapp -->
+                    <div class="w-full max-w-[500px] flex gap-3 items-center">
+                        <div class="flex-none">
+                            <img src="assets/cara-order-1 1.png" alt="" class="w-[90px]">
+                        </div>
+                        <div class="">
+                            <p class="font-semibold text-lg md:text-xl">Chat Kami di WhatsApp</p>
+                            <p class="text-zinc-600 text-sm md:text-base"><span class="font-semibold">WA</span>:
+                                0812-3456-7890</p>
+                        </div>
+                    </div>
+                    <!-- > kirimkan detail tugas -->
+                    <div class="w-full max-w-[500px] flex gap-3 items-center">
+                        <div class="flex-none">
+                            <img src="assets/cara-order-2 1.png" alt="" class="w-[90px]">
+                        </div>
+                        <div class="">
+                            <p class="font-semibold text-lg md:text-xl">Kirimkan Detail Tugas</p>
+                            <p class="text-zinc-600 text-sm md:text-base">Kirim foto tugas kamu beserta detail
+                                deadlinenya</p>
+                        </div>
+                    </div>
+                    <!-- > Lakukan Pembayaran -->
+                    <div class="w-full max-w-[500px] flex gap-3 items-center">
+                        <div class="flex-none">
+                            <img src="assets/cara-order-3 1.png" alt="" class="w-[90px]">
+                        </div>
+                        <div class="">
+                            <p class="font-semibold text-lg md:text-xl">Lakukan Pembayaran</p>
+                            <p class="text-zinc-600 text-sm md:text-base">Pembayaran bisa melalui transfer bank /
+                                e-wallet</p>
+                        </div>
+                    </div>
+                    <!-- > Menunggu Hasil Tugas -->
+                    <div class="w-full max-w-[500px] flex gap-3 items-center">
+                        <div class="flex-none">
+                            <img src="assets/cara-order-4 1.png" alt="" class="w-[90px]">
+                        </div>
+                        <div class="">
+                            <p class="font-semibold text-lg md:text-xl">Menunggu Hasil Tugas</p>
+                            <p class="text-zinc-600 text-sm md:text-base">Tim kami akan segera menyelesaikan tugas kamu
+                            </p>
+                        </div>
+                    </div>
+                    <!-- > Tugas Kamu Selesai -->
+                    <div class="max-w-[500px] flex gap-3 items-center">
+                        <div class="flex-none">
+                            <img src="assets/cara-order-5 1.png" alt="" class="w-[90px]">
+                        </div>
+                        <div class="">
+                            <p class="font-semibold text-lg md:text-xl">Tugas Kamu Selesai</p>
+                            <p class="text-zinc-600 text-sm md:text-base">Tim kami akan mengirimkan hasil tugas kamu</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="pt-10 flex justify-center">
+                    <button class=" bg-[#4745D0] text-sm text-white font-semibold px-6 py-4 rounded-[15px] border-2 border-[#4745D0]
+                    hover:bg-transparent hover:text-[#4745D0] duration-300 group flex
+                    ">
+                        Konsultasi Tugasmu Sekarang! <p class="pl-2 group-hover:translate-x-1  duration-200"> ></p>
+                    </button>
+                </div>
+            </div>
+            <!-- contact section ends -->
+        </main>
+        <footer class="border-2 rounded-[20px] flex flex-col md:flex-row">
+            <div class="flex-1  p-5 flex flex-col justify-between border-b-2 md:border-b-0 md:border-r-2">
+                <p class="font-black text-xl pb-20">TaskMaster.</p>
+                <p class="opacity-50 text-sm">Copyright TaskMaster. All rights reserved.</p>
+            </div>
+            <div class="flex-1 p-5 flex flex-col items-between border-b-2 md:border-b-0 md:border-r-2">
+                <ul class="font-semibold text-sm pb-20 space-y-2">
+                    <li>Home</li>
+                    <li>About Us</li>
+                    <li>Services</li>
+                    <li>Contact</li>
+                </ul>
+                <div class="flex gap-3 opacity-50 items-center">
+                    <i class="fa-brands fa-whatsapp fa-lg"></i>
+                    <p class="text-xs">0812-3456-7890</p>
+                </div>
+            </div>
+            <div class="flex-1 p-5 flex flex-col justify-between">
+                <p class="text-zinc-600 text-sm pb-20">
+                    Have questions or feedback? Reach out to us,
+                    we're here to help. Your thoughts and suggestions
+                    are always welcome!
+                </p>
+                <div>
+                    <button class=" bg-[#4745D0] text-xs text-white font-semibold px-6 py-4 rounded-[15px] border-2 border-[#4745D0]
+                hover:bg-transparent hover:text-[#4745D0] duration-300 group flex
+                ">
+                        Konsultasi Sekarang! <p class="pl-2 group-hover:translate-x-1  duration-200"> ></p>
+                    </button>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- flying whatsapp -->
+    <div class="whatsapp-container fixed bottom-5 right-5 md:bottom-10 md:right-10">
+        <!-- > Hover text  pop up-->
+        <div class="hover-text absolute -top-12 right-0 whitespace-nowrap rounded-lg bg-gray-800 px-4 py-2 text-sm text-white before:absolute before:bottom-[-5px] before:right-6 before:h-0 before:w-0 before:border-l-8 before:border-r-8 before:border-t-8 before:border-l-transparent before:border-r-transparent before:border-t-gray-800">
+            Chat mimin di WhatsApp!
         </div>
-    </main>
-    <footer>
-        <div>
-            Footer
-        </div>
-    </footer>
+
+        <!-- > WhatsApp icon -->
+        <button
+            class="flex h-12 w-12 md:h-14 md:w-14 cursor-pointer items-center justify-center rounded-full bg-[#25D366] shadow-lg transition-transform hover:scale-110">
+            <div class="bg-red-300 p-[7px] md:p-2 rounded-full absolute right-0 top-0 "></div>
+            <div class="bg-red-600 p-[7px] md:p-2 rounded-full absolute right-0 top-0 animate-pulse"></div>
+            <i class="fa-brands fa-whatsapp fa-xl md:fa-2xl text-white"></i>
+        </button>
+    </div>
+    <!-- flying whatsapp ends-->
 </body>
+
 </html>

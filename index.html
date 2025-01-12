@@ -16,14 +16,14 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="navbar.js" defer></script> <!-- Load the script -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <style src="">
         html {
             padding: 0;
             margin: 0;
             overflow: -moz-scrollbars-none;
             overflow-y: scroll;
-            /* scroll-behavior: smooth; */
+            scroll-behavior: smooth;
             background: #fbfbe8;
 
         }
@@ -41,6 +41,7 @@
             font-family: "Dancing Script", cursive;
         }
 
+
         .hover-text {
             opacity: 0;
             transform: translateY(10px);
@@ -54,32 +55,150 @@
     </style>
 </head>
 
-<body>
+<body class="">
     <div class="flex justify-center">
-        <header
-            class="md:absolute w-full max-w-[1200px]  h-[50px] md:h-[70px] flex justify-between items-center p-3 md:px-10">
-            <!-- <navbar-w></navbar-w> -->
-            <div>
-                <p class="font-black text-xl md:text-2xl text-[#4745D0]">TaskMaster.</p>
+        <!-- navbar top  -->
+        <header id=""
+            class="w-full max-w-[1200px] h-[70px] z-[100] md:h-[100px] absolute bg-[#fbfbe8] rounded-b-[20px] flex justify-between items-center p-3 md:px-10">
+            <div id="logo">
+                <p class="font-black text-xl md:text-2xl">TaskMaster.</p>
             </div>
             <div>
-                <div>
-                    <i class="md:hidden fa-solid fa-bars fa-xl"></i>
+                <div id="menu-burger" class="">
+                    <i id="" class="md:hidden fa-solid fa-bars fa-xl"></i>
                 </div>
                 <ul class="hidden md:flex font-medium gap-10 text-zinc-600">
-                    <li>Home</li>
-                    <li>About Us</li>
-                    <li>Services</li>
-                    <li>Contact</li>
+                    <li id="menu-home">
+                        <a href="/" class="hover:text-[#4745D0] text-[#4745D0]">
+                            Home
+                        </a>
+                    </li>
+                    <li id="menu-about">
+                        <a href="#about" class="hover:text-[#4745D0]">
+                            About Us
+                        </a>
+                    </li>
+                    <li id="menu-services">
+                        <a href="#services" class="hover:text-[#4745D0]">
+                            Services
+                        </a>
+                    </li>
+                    <li id="menu-contact">
+                        <a href="#contact" class="hover:text-[#4745D0]">
+                            Contact
+                        </a>
+                    </li>
                 </ul>
             </div>
         </header>
-    </div>
+        <!-- navbar top ends -->
 
+        <!-- navbar when scroll  -->
+        <header id="navbar" class="w-full max-w-[1200px] h-[80px] md:h-[100px] z-[100] fixed  flex justify-between items-center p-3 md:px-10
+            translate-y-[-100px] duration-[500ms] ease-in-out transition 
+            bg-[#fbfbe8] rounded-b-[20px] border-b-4 border-x-2 border-[#4745D0] shadow-sm shadow-black/40">
+            <!-- <navbar-w></navbar-w> -->
+            <div id="logo">
+                <p class="font-black text-xl md:text-2xl">TaskMaster.</p>
+            </div>
+            <div>
+                <div id="menuBurger">
+                    <i class="md:hidden fa-solid fa-bars fa-xl"></i>
+                </div>
+                <ul class="hidden md:flex font-medium gap-10 text-zinc-600">
+                    <li id="menuHome">
+                        <a href="/" class="hover:text-[#4745D0]">
+                            Home
+                        </a>
+                    </li>
+                    <li id="menuAbout">
+                        <a href="#about" class="hover:text-[#4745D0]">
+                            About Us
+                        </a>
+                    </li>
+                    <li id="menuServices">
+                        <a href="#services" class="hover:text-[#4745D0]">
+                            Services
+                        </a>
+                    </li>
+                    <li id="menuContact">
+                        <a href="#contact" class="hover:text-[#4745D0]">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <!-- navbar when scroll ends  -->
+        <!-- navbar pop mobile -->
+        <header id="navbarPop" class="w-full h-[120vh] fixed md:hidden z-[200] 
+         translate-y-[-150vh] duration-[800ms] ease-in-out transition
+         bg-[#fbf5e8] shadow-md shadow-black/40 rounded-b-[40px]">
+            <div class="w-full h-full max-h-[100vh] flex flex-col justify-between">
+                <div
+                    class="w-full h-[80px] pt-5 px-3 flex-none flex justify-between shadow-sm shadow-black/40  rounded-b-[30px]">
+                    <div id="logo">
+                        <p class="font-black text-xl md:text-2xl">TaskMaster.</p>
+                    </div>
+                    <div>
+                        <button id="menu-x"
+                            class=" w-8 h-8 border-[3px] border-black rounded-full flex items-center justify-center shadow-sm shadow-black/40">
+                            <i class="fa-solid fa-xmark fa-lg"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class=" w-full">
+                    <ul class="font-medium gap-10 text-zinc-600 ">
+                        <a href="/" id="menupop-home" class="hover:text-[#4745D0] text-[#4745D0]">
+                            <li class="border-b-2 p-3 flex items-center justify-between">
+                                <span>Home</span>
+                                <span>></span>
+                            </li>
+                        </a>
+                        <a href="#about" id="menupop-about" class="hover:text-[#4745D0]">
+                            <li class="border-b-2 p-3 flex items-center justify-between">
+                                <span>About Us</span>
+                                <span>></span>
+                            </li>
+                        </a>
+                        <a href="#services" id="menupop-services" class="hover:text-[#4745D0] ">
+                            <li class="border-b-2 p-3 flex items-center justify-between">
+                                <span>Services</span>
+                                <span>></span>
+                            </li>
+                        </a>
+                        <a href="#contact" id="menupop-contact" class="hover:text-[#4745D0] ">
+                            <li class="border-b-2 p-3 flex items-center justify-between">
+                                <span>Contact</span>
+                                <span>></span>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+                <div class=" p-5 flex flex-col">
+                    <p class="text-zinc-600 text-xs pb-10">
+                        Have questions or feedback? Reach out to us,
+                        we're here to help. Your thoughts and suggestions
+                        are always welcome!
+                    </p>
+                    <div>
+                        <button class=" bg-[#4745D0] text-xs text-white font-medium px-4 py-3 rounded-[15px] border-2 border-[#4745D0]
+                hover:bg-transparent hover:text-[#4745D0] duration-300 group flex
+                ">
+                            Konsultasi Sekarang!
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- navbar pop mobile ends -->
+    </div>
+    <!-- content  -->
     <div class="w-full max-w-[1200px] h-auto mx-auto p-3 md:px-10 poppins space-y-[10px]">
         <main class="pb-20">
             <!-- hero section  -->
-            <div class="md:h-screen space-y-[30px] md:space-y-0 md:flex  md:py-10 md:space-x-12">
+            <div id="home"
+                class="md:h-screen space-y-[30px] md:space-y-0 md:flex  md:py-10 md:space-x-12 mt-[70px] md:mt-0">
                 <div class="flex-1 flex items-center">
                     <img src="assets/main.png" alt="" class=" brightness-110  ">
                 </div>
@@ -96,7 +215,7 @@
                         <button class=" bg-[#4745D0] text-sm text-white font-semibold px-6 py-4 rounded-[15px] border-2 border-[#4745D0]
                     hover:bg-transparent hover:text-[#4745D0] duration-300 group flex
                     ">
-                            Konsultasi Sekarang<p class="pl-2 group-hover:translate-x-1  duration-200"> ></p>
+                            Konsultasi Sekarang!<p class="pl-2 group-hover:translate-x-1  duration-200"> ></p>
                         </button>
                     </div>
                 </div>
@@ -104,7 +223,7 @@
             <!-- hero section ends  -->
             <!-- about us section  -->
             <!-- >serba bisa  -->
-            <div class="py-10 space-y-5 md:flex md:gap-6 md:space-y-0">
+            <div id="about" class="py-10 space-y-5 md:flex md:gap-6 md:space-y-0">
                 <div
                     class="flex-1 rounded-[20px] shadow-inner shadow-black/30  border-2 border-[#4745D0]  p-8 space-y-5">
                     <div class="flex items-center gap-6">
@@ -185,7 +304,7 @@
             </div>
             <!-- about us section ends -->
             <!-- service section  -->
-            <div class="w-full h-auto pt-16">
+            <div id="services" class="w-full h-auto pt-10 mt-10">
                 <p class="pb-10 font-bold text-center text-2xl md:text-3xl">Our <span
                         class="text-[#4745D0]">Services</span></p>
                 <div class="pb-16 space-y-6 md:grid md:grid-cols-3 md:gap-10 md:space-y-0">
@@ -285,7 +404,7 @@
             </div>
             <!-- service section ends  -->
             <!-- contact section  -->
-            <div class="py-10">
+            <div id="contact" class="py-10">
                 <div class="space-y-3 text-center flex flex-col items-center">
                     <p class="font-semibold text-2xl md:text-3xl">Bagaimana <span class="text-[#4745D0]">Cara
                             Ordernya?</span></p>
@@ -366,14 +485,31 @@
         <footer class="border-2 rounded-[20px] flex flex-col md:flex-row">
             <div class="flex-1  p-5 flex flex-col justify-between border-b-2 md:border-b-0 md:border-r-2">
                 <p class="font-black text-xl pb-20">TaskMaster.</p>
-                <p class="opacity-50 text-sm">Copyright TaskMaster. All rights reserved.</p>
+                <p class="opacity-50 text-xs">Copyright TaskMaster. All rights reserved.</p>
             </div>
             <div class="flex-1 p-5 flex flex-col items-between border-b-2 md:border-b-0 md:border-r-2">
                 <ul class="font-semibold text-sm pb-20 space-y-2">
-                    <li>Home</li>
-                    <li>About Us</li>
-                    <li>Services</li>
-                    <li>Contact</li>
+                    <li>
+                        <a href="/" class="hover:text-[#4745D0] duration-200">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about" class="hover:text-[#4745D0] duration-200">
+                            About us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#services" class="hover:text-[#4745D0] duration-200">
+                            Services
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="hover:text-[#4745D0] duration-200">
+                            Contact
+                        </a>
+                    </li>
+
                 </ul>
                 <div class="flex gap-3 opacity-50 items-center">
                     <i class="fa-brands fa-whatsapp fa-lg"></i>
@@ -396,23 +532,105 @@
             </div>
         </footer>
     </div>
+    <!-- content ends -->
 
     <!-- flying whatsapp -->
     <div class="whatsapp-container fixed bottom-5 right-5 md:bottom-10 md:right-10">
         <!-- > Hover text  pop up-->
-        <div class="hover-text absolute -top-12 right-0 whitespace-nowrap rounded-lg bg-gray-800 px-4 py-2 text-sm text-white before:absolute before:bottom-[-5px] before:right-6 before:h-0 before:w-0 before:border-l-8 before:border-r-8 before:border-t-8 before:border-l-transparent before:border-r-transparent before:border-t-gray-800">
+        <div
+            class="hover-text absolute -top-12 right-0 whitespace-nowrap rounded-lg bg-gray-800 px-4 py-2 text-sm text-white before:absolute before:bottom-[-5px] before:right-6 before:h-0 before:w-0 before:border-l-8 before:border-r-8 before:border-t-8 before:border-l-transparent before:border-r-transparent before:border-t-gray-800">
             Chat mimin di WhatsApp!
         </div>
 
         <!-- > WhatsApp icon -->
         <button
-            class="flex h-12 w-12 md:h-14 md:w-14 cursor-pointer items-center justify-center rounded-full bg-[#25D366] shadow-lg transition-transform hover:scale-110">
+            class="flex h-12 w-12 md:h-14 md:w-14 cursor-pointer items-center justify-center rounded-full bg-[#25D366] shadow-lg hover:brightness-[1.1] duration-300">
             <div class="bg-red-300 p-[7px] md:p-2 rounded-full absolute right-0 top-0 "></div>
             <div class="bg-red-600 p-[7px] md:p-2 rounded-full absolute right-0 top-0 animate-pulse"></div>
-            <i class="fa-brands fa-whatsapp fa-xl md:fa-2xl text-white"></i>
+            <i class="fa-brands fa-whatsapp fa-xl md:hidden text-white"></i>
+            <i class="fa-brands fa-whatsapp hidden md:block fa-2xl text-white"></i>
         </button>
     </div>
     <!-- flying whatsapp ends-->
+    <script>
+        // navbar when scroll
+        $(document).ready(function () {
+            let lastScrollTop = 0;
+
+            $(window).scroll(function () {
+                let currentScroll = $(this).scrollTop();
+                // Handle scroll direction
+                if (currentScroll > lastScrollTop) {
+                    // Scrolling DOWN - hide navbar
+                    $("#navbar").addClass('translate-y-[-100px]');
+                } else {
+                    // Scrolling UP - show navbar
+                    $("#navbar").removeClass('md:h-[100px] translate-y-[-100px]');
+                }
+                // if user scrolled reach the top navbar hide 
+                if (currentScroll == 0) {
+                    $("#navbar").addClass('translate-y-[-100px]');
+                }
+                lastScrollTop = currentScroll;
+            });
+        });
+        $(document).ready(function () {
+
+            // click handle for navbar pop mobile 
+            $('#menu-burger, #menuBurger').click(function () {
+                $('#navbarPop').removeClass('translate-y-[-150vh]').addClass('translate-y-0');
+            });
+            $('#menu-x, #menupop-home, #menupop-about, #menupop-services, #menupop-contact').click(function () {
+                $('#navbarPop').removeClass('translate-y-0').addClass('translate-y-[-150vh]');
+            });
+
+
+            // view tracker for navigation menu 
+            $(window).on('scroll', function () {
+                // Get current scroll position plus half the window height
+                var scrollPosition = $(window).scrollTop() + $(window).height() / 2;
+
+                // Check About section
+                var homeSection = $('#home');
+                var aboutSection = $('#about');
+                var servicesSection = $('#services');
+                var contactSection = $('#contact');
+
+                // Get the sections' positions
+                var homeTop = home.length ? homeSection.offset().top : 0;
+                var aboutTop = aboutSection.length ? aboutSection.offset().top : 0;
+                var servicesTop = servicesSection.length ? servicesSection.offset().top : 0;
+                var contactTop = contactSection.length ? contactSection.offset().top : 0;
+
+                // Reset all menu items first
+                $('#menuHome, #menuAbout, #menuServices, #menuContact').removeClass('text-[#4745D0]');
+                $('#menu-about, #menu-services, #menu-contact').removeClass('text-[#4745D0]');
+                $('#menupop-home, #menupop-about, #menupop-services, #menupop-contact').removeClass('text-[#4745D0]');
+
+                // Check which section we're in and highlight only that menu
+                if (scrollPosition >= homeTop && scrollPosition < aboutTop) {
+                    $('#menuHome').addClass('text-[#4745D0]');
+                    $('#menupop-home').addClass('text-[#4745D0]');
+                }
+                else if (scrollPosition >= aboutTop && scrollPosition < servicesTop) {
+                    $('#menuAbout').addClass('text-[#4745D0]');
+                    $('#menu-about').addClass('text-[#4745D0]');
+                    $('#menupop-about').addClass('text-[#4745D0]');
+                    $('#menupop-home').removeClass('text-[#4745D0]');
+                }
+                else if (scrollPosition >= servicesTop && scrollPosition < contactTop) {
+                    $('#menuServices').addClass('text-[#4745D0]');
+                    $('#menu-services').addClass('text-[#4745D0]');
+                    $('#menupop-services').addClass('text-[#4745D0]');
+                }
+                else if (scrollPosition >= contactTop) {
+                    $('#menuContact').addClass('text-[#4745D0]');
+                    $('#menu-contact').addClass('text-[#4745D0]');
+                    $('#menupop-contact').addClass('text-[#4745D0]');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
